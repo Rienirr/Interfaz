@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html"> index </a>
+        <a href="blog.html"> blog </a>
+        <a href="imagen.html"> imagen </a>
+        <a href="etiquetas.html"> etiquetas </a>
+        <a href="formulario.html"> formulario</a>
+    </nav>
+    <br><br>
+    <form action="" method="POST"></form>
+    <fieldset>
+        <legend>Campos Obligatorios</legend>
+        <label for="nombre"> Nombre</label>   <input type="text" name="nombre" id="nombre" required autofocus> 
+        <label for="email"> Email</label>     <input type="email" name="mail" id="mail" required>
+       <fieldset>
+           <legend> Género</legend>
+        <label for="hombre">hombre</label> <input type="radio" name="sexo" id="hombre" value="hombre" >
+       <label for="mujer">mujer</label> <input type="radio" name="sexo" id="mujer" value="mujer" checked>
+    </fieldset>
+    </fieldset>
+    <br><br>
+    <label for="url"> URL</label><input type="url" name="url" id="url" placeholder="url de página web personal" ><br><br>
+    <label for="date">Fecha</label><input type="date" name="date" id="date"><br><br>
+        <label for="time">Tiempo</label><input type="time" name="tiempo" id="tiempo"><br><br>
+       <label for="week">Semana</label> <input type="week" name="week" id="week"><br><br>
+       <label for="month">Mes</label> <input type="month" name="month" id="month"><br><br>
+    <label for="numero">Número (min -10,max 10) </label><input type="number" name="numero" id="numero" min="-10" max="10" step="1"><br><br>
+    <label for="rango"> Intervalo</label><input type="range" name="rango" id="rango" min="0" max="10" ><br><br>
+    <label for="telefono">Teléfono</label><input type="tel" name="telefono" id="telefono"><br><br>
+    <label for="busqueda"> Búsqueda</label><input type="search" id="busqueda" name="busqueda" placeholder="término a buscar"><br><br>
+   <label for="color"></label><input type="color" name="color" id="color"><br><br>
+    <label for="submit"></label><input type="submit" name="sumbit" id="submit" value="Enviar">    
+
+
+</body>
+</html>
