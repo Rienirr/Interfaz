@@ -15,11 +15,11 @@
         <a href="formulario.html"> formulario</a>
     </nav>
     <br><br>
-    <form action="" method="POST"></form>
+    <form id="Fo" action="" method="POST"></form>
     <fieldset>
         <legend>Campos Obligatorios</legend>
-        <label for="nombre"> Nombre</label>   <input type="text" name="nombre" id="nombre" required autofocus> 
-        <label for="email"> Email</label>     <input type="email" name="mail" id="mail" required>
+        <label for="nombre"> Nombre</label>   <input type="text" name="nombre" id="nombre" placeholder="Pepito" required autofocus> 
+        <label for="email"> Email</label>     <input type="email" name="mail" id="mail"  placeholder="ejemplo@ejemplo.es" required>
        <fieldset>
            <legend> Género</legend>
         <label for="hombre">hombre</label> <input type="radio" name="sexo" id="hombre" value="hombre" >
@@ -39,6 +39,6 @@
    <label for="color"></label><input type="color" name="color" id="color"><br><br>
     <label for="submit"></label><input type="submit" name="sumbit" id="submit" value="Enviar">    
 
-
+<script src="formulario.js"></script>
 </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog2</title>
+</head>
+<body>
+    <header><h1>blog </h1></header>
+    <nav>
+        <a href="index.html"> index </a>
+        <a href="blog.html"> blog </a>
+        <a href="imagen.html"> imagen </a>
+        <a href="etiquetas.html"> etiquetas </a>
+        <a href="formulario.html"> formulario</a>
+    </nav>
+
+    <div>
+        <section>
+            <h2> Primer Vídeo</h2><!--- no se deben usar más h1  -->       
+            <video width="320" height="240"  autoplay controls>
+                <source src="media/Sunrise - 83880.mp4" type="video/mp4">
+                  <!-- He ecncontrado varios convertidos a OGG para vídeo pero ninguno funciona correctamente dejo bajo la prueba 
+                    <source src="media/Sunrise-83880.ogg" type="video/ogg"> -->
+               
+                Your browser does not support the video tag.
+              </video>
+            <article>  
+
+
+                <article> 
+            <h2> segundo Vídeo</h2>
+            
+              <video width="320" height="240"  poster="img/sunsetx1.jpg" controls autoplay muted >
+                <source src="media/pexels-solodsha-9008429.mp4" type="video/mp4">
+             
+                Your browser does not support the video tag.
+              </video>
+              <audio id="audio1" controls >
+                <source src="media/Battleship.ogg" type="audio/ogg">
+               
+                Your browser does not support the audio element.
+              </audio>
+              <audio id="audio2" controls >
+                <source src="media/hjp02049.ogg" type="audio/ogg">
+               
+                Your browser does not support the audio element.
+              </audio>
+              <audio id="audio3" controls >
+                <source src="media/hjp02065.ogg" type="audio/ogg">
+               
+                Your browser does not support the audio element.
+              </audio>
+              <audio id="audio4" controls >
+                <source src="media/hjp02067.ogg" type="audio/ogg">
+               
+                Your browser does not support the audio element.
+              </audio>
+           </article>
+        </section>
+    </div>
+    <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
+    <script src="blog2.js"></script>
+</body>
+</html>
