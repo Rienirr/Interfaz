@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio1 </title>
+</head>
+<body>
+  
+</body>
+</html>
+<p> 1. ¿En qué elemento de SVG se utiliza el atributo spreadMethod? Indica qué valores puede tomar y pon
+  un ejemplo de cada uno de ellos.
+  Se utiliza en el elemento linearGradient o radialGradient para indicar una vez acabado este como se debe continuar hay 3 métodos:
+  <ul>
+    <li> pad:
+      Este valor indica que el color final del gradiente rellena el rest,ouna vez acaba el tamaño especificado . </li>
+ 
+      <li>  reflect:
+        Esto hace que se repita el gradiente de forma inversa al acabar una vez acaba el tamaño especificado . </li>
+
+      <li>  repeat:
+        Esto repite el gradiente una vez acaba el tamaño especificado.</li>
+ </ul></p>
+<svg width="258" height="250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+    <linearGradient id="pad"
+                    x1="10%" x2="40%">
+      <stop offset="0%"  stop-color="red"/>
+      <stop offset="100%" stop-color="black"/>
+    </linearGradient>
+
+    <linearGradient id="reflect" spreadMethod="reflect"
+                     x1="10%" x2="40%">
+                     <stop offset="0%"  stop-color="red"/>
+                     <stop offset="100%" stop-color="black"/>
+    </linearGradient>
+    <linearGradient id="repeat" spreadMethod="repeat"
+                     x1="0%" x2="34%">
+                    <stop offset="0%"  stop-color="red"/>
+                    <stop offset="100%" stop-color="black"/>
+    </linearGradient>
+  </defs>
+
+  <rect fill="url(#pad)"
+          x="10" y="0" width="250" height="50"/>
+  <rect fill="url(#reflect)"
+          x="10" y="60" width="250" height="50"/>
+  <rect fill="url(#repeat)"
+          x="10" y="120" width="250" height="50"/>
+</svg>
