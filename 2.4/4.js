@@ -1,49 +1,55 @@
-var semaforo;
+window.onload= ()=>{
+
+}
+var semaforo = true;
+
 document.getElementById("boton").addEventListener("click", () => {
     cambiar();
 }, false);
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-var grd = ctx.createLinearGradient(0, 0, 360, 0);
-grd.addColorStop(0.14, "red");
-grd.addColorStop(0.29, "orange");
-grd.addColorStop(0.44, "yellow");
-grd.addColorStop(0.59, "green");
-grd.addColorStop(0.74, "aqua");
-grd.addColorStop(0.89, "blue");
-grd.addColorStop(1, "purple");
-ctx.fillStyle = grd;
-ctx.fillRect(0, 0, 400, 250);
+var gradiente = ctx.createLinearGradient(0, 0, 500, 0);
+/*Para rellenar más o menos de forma  correcta  he pillado los colores que he visto en internet*/ 
+gradiente.addColorStop(1/7, "#FF0000");
+gradiente.addColorStop(2/7, "#FF7F00");
+gradiente.addColorStop(3/7, "#FFFF00");
+gradiente.addColorStop(4/7, "#00FF00");
+gradiente.addColorStop(5/7, "#00FFFF");
+gradiente.addColorStop(6/7, "#0000FF");
+gradiente.addColorStop(1, "#8d00FF");
+ctx.fillStyle = gradiente;
+ctx.fillRect(0, 0, 500, 400);
 
 function cambiar() {
     if (semaforo === false) {
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-        var grd = ctx.createLinearGradient(0, 0, 360, 0);
-        grd.addColorStop(0.14, "red");
-        grd.addColorStop(0.29, "orange");
-        grd.addColorStop(0.44, "yellow");
-        grd.addColorStop(0.59, "green");
-        grd.addColorStop(0.74, "aqua");
-        grd.addColorStop(0.89, "blue");
-        grd.addColorStop(1, "purple");
-        ctx.fillStyle = grd;
-        ctx.fillRect(0, 0, 400, 250);
+        var gradiente = ctx.createLinearGradient(0, 0, 500, 0);
+        
+        gradiente.addColorStop(1/7, "#FF0000");
+        gradiente.addColorStop(2/7, "#FF7F00");
+        gradiente.addColorStop(3/7, "#FFFF00");
+        gradiente.addColorStop(4/7, "#00FF00");
+        gradiente.addColorStop(5/7, "#00FFFF");
+        gradiente.addColorStop(6/7, "#0000FF");
+        gradiente.addColorStop(1, "#8d00FF");;
+        ctx.fillStyle = gradiente;
+        ctx.fillRect(0, 0, 500, 400);
         semaforo = true;
     } else {
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-        var grd = ctx.createLinearGradient(0, 0, 360, 0);
-        grd.addColorStop(0.14, "purple");
-        grd.addColorStop(0.29, "blue");
-        grd.addColorStop(0.44, "aqua");
-        grd.addColorStop(0.59, "green");
-        grd.addColorStop(0.74, "yellow");
-        grd.addColorStop(0.89, "orange");
-        grd.addColorStop(1, "red");
-        ctx.fillStyle = grd;
-        ctx.fillRect(0, 0, 400, 250);
+        var gradiente = ctx.createLinearGradient(0, 0, 500, 0);
+        gradiente.addColorStop(1/7, "#8d00FF");
+        gradiente.addColorStop(2/7, "#0000FF");
+        gradiente.addColorStop(3/7, "#00FFFF");
+        gradiente.addColorStop(4/7, "#00FF00");
+        gradiente.addColorStop(5/7, "#FFFF00");
+        gradiente.addColorStop(6/7, "#FF7F00");
+        gradiente.addColorStop(1, "#FF0000");
+        ctx.fillStyle = gradiente;
+        ctx.fillRect(0, 0, 500, 400);
         semaforo = false;
     }
 }
