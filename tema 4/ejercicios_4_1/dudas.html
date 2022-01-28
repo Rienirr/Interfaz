@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Grid  justify-items &amp; align-items inside grid areas</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<style>
+  body{
+    color:white;
+    background-color: #222;
+  }
+#cuadricula {
+  
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-row: 100px 100px 100px;
+  grid-gap: 0px;
+  grid-template-areas: "a a . . ."
+                       "a a . b b"
+                       ". . . b b";
+  border: 1px dashed #777;
+  width: 500px;
+  height: 300px;
+  background: 0 0/100px 100px linear-gradient(transparent 0%, transparent 99%, #777 100%), 0 0/100px 100px linear-gradient(90deg, transparent 0%, transparent 99%, #777 100%), 0 0/200px 200px no-repeat url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/222579/test.svg'), 300px 100px/200px 200px no-repeat url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/222579/test.svg');
+}
+.item {
+ display: grid;
+}
+.a{ grid-area: a;}
+.b{ grid-area: b;}
+.p{
+ 
+  border: 1px solid #000;
+border-radius: 10px;
+  padding: 2em;
+  background-color: hsla(180, 100%, 50%, .5);
+}
+.startj{
+  justify-items: start; 
+}
+.centerj{
+  justify-items: center; 
+}
+.endj{
+  justify-items: end; 
+}
+.stretchj{
+  justify-items: stretch; 
+}
+.starta{
+  align-items: start; 
+}
+.centera{
+  align-items: center; 
+}
+.enda{
+  align-items: end; 
+}
+.strecha{
+  align-items: stretch; 
+}
+
+</style>
+
+</head>
+<div>  <label >justify-items</label> <input type="radio"  class="justify" name="justify" value="centerj">  <label> Center</label>  <input type="radio"  class="justify" name="justify" value="startj"> <label> Start </label>  <input type="radio" class="justify" name="justify" value="endj"> <label> End</label> <input type="radio" class="justify" name="justify" value="stretchj">  <label> Strech</label>    </div>
+<div>  <label for="align">align-items</label>  <input type="radio" name="align" value="centera">  <label> Center</label>  <input type="radio" name="align" value="starta"> <label> Start </label>  <input type="radio" name="align" value="enda"> <label> End</label> <input type="radio" name="align" value="strecha">  <label> Strech</label>  </div>
+<div id="cuadricula" class="centera centerj">
+<div class="item a"><p class="p">a</p></div><!--header-->
+<div class="item b"><p class="p">b</p></div><!--left-->
+</div>
+  <script>
+let d = document;
+let justify= d.getElementsByClassName("justify");
+let p= d.getElementById("cuadricula");
+let align= d.getElementsByName("align");
+for (let i=0; i<justify.length;i++){
+justify[i].addEventListener("click",(e)=>{//Elimino las clases y asigno la que queremos para justify-items.
+  p.classList.remove("startj", "centerj","endj","stretchj");
+   p.classList.add(`${e.target.value}`);
+ },false);
+
+ align[i].addEventListener("click",(e)=>{//Elimino las clases y asigno la que queremos para align-items.
+    p.classList.remove("starta", "centera","enda","strecha");
+    p.classList.add(`${e.target.value}`);
+  
+  },false);
+
+}
+
+
+
+
+  </script>
+</body>
+</html>
