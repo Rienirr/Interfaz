@@ -26,7 +26,7 @@
     display: grid;
     justify-content: center;
     align-content: center;
-    
+    grid-auto-flow: column;
     width: 100px;
   height: 100px;
   }
@@ -36,6 +36,13 @@
 <div id="wrapper">
 <div id="gridGaps" class="range">
   <p>
+    <label>grid-auto-flow: column</label>
+    <input type="radio" name="eleccion" value="column"> 
+    <label>grid-auto-flow: row</label>
+    <input type="radio" name="eleccion" value="row"> 
+    <p>
+  
+  <p>
   <label>grid-rows-gap: <span id="row">1</span>px;</label>
   <input type="range" name="gridRowGap" id="gridRowGap" min="0" max="50" value="1"> 
   <p>
@@ -44,6 +51,10 @@
   <input type="range" name="gridColumnGap" id="gridColumnGap" min="0" max="50" value="1"> 
   <p>
   <p style="display:inline; white-space: nowrap;">grid-gap: <span id="spangridRowGap">1</span>px <span id="spangridColumnGap">1</span>px;</p>
+  <p>
+    <label>grid-auto-gap: <span id="row">1</span>px;</label>
+    <input type="range" name="gridRowGap" id="gridRowGap" min="0" max="50" value="1"> 
+    <p>
 </div>
 
 <div id="cuadricula">
@@ -66,6 +77,7 @@
 </div>
 
 <script>
+  var radios= document.getElementsByName("eleccion");
 var row= document.getElementById("gridRowGap");
 var column= document.getElementById("gridColumnGap");
 var idrow= document.getElementById("row");
@@ -73,6 +85,11 @@ var shortrow= document.getElementById("spangridRowGap");
 var shortcolumn= document.getElementById("spangridColumnGap");
 var idcolum =document.getElementById("column");
 var cuadricula= document.getElementById("cuadricula");
+for(let i=0;i<radios.length;i++){
+  radios[i].addEventListener("click",(event)=>{
+    cuadricula.style.gridAutoFlow=`${event.target.value}`;
+  },false);
+}
 row.addEventListener("click",(event)=>{
   shortrow.innerText=`${event.target.value}px`;
 idrow.innerText=`${event.target.value}px`;
