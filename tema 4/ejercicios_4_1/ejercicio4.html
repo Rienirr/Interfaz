@@ -18,8 +18,30 @@ body {
   background: no-repeat url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/12005/grid.png);
   background-color: #fff;
   color: #444;
+  display: grid;
+  grid-template-rows: 100px 100px  100px 100px  100px 100px;
+  grid-template-columns: 100px 100px  100px 100px 100px 100px  100px 100px  100px;
+  grid-template-areas: "a a a b b b e e e"
+                       "a a a b b b e e e"
+                       "a a a b b b e e e"
+                       "c c c d d d e e e"
+                       "c c c d d d e e e"
+                       "c c c d d d e e e";
 }
-
+.box{
+  display: grid;
+  border: 1px solid black;
+}
+.a{ grid-area: a;
+    align-self: stretch;}
+.b{ grid-area: b; align-self: end;}
+.c{grid-area: c;  align-self: start;}
+.d{grid-area: d;  align-self: center;}
+.e{ grid-area: e;
+    align-self: stretch;}
+    p{
+      max-width: 300px;
+    }
 </style>
 
 </head>
