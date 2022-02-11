@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4_2</title>
+    <style>
+        
+      
+table{
+    counter-reset: columnas;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th{
+    border: 2px solid black;
+    background-color: rgb(203, 218, 169);
+}
+tr{
+  
+}
+tr:hover{
+    background-color: rgb(203, 218, 169);
+}
+
+body {
+  counter-reset: filas;
+
+
+}
+
+tbody tr td:first-child::before {
+    counter-increment: filas;
+    content:  counter(filas);
+}
+
+thead tr th:nth-of-type(n+2)::before {
+    counter-increment: columnas;
+    content:  counter(columnas,upper-alpha);
+}
+td{
+    border: 2px solid black;
+    border-collapse: collapse;
+   min-height: 50px;
+   min-width: 50px;
+    }
+
+
+    </style>
+</head>
+<body>
+    <table>
+    <thead>
+        <tr>  <th> </th>  <th> </th> <th> </th>  <th> </th><th> </th>    </tr>     
+     </thead>    
+    <tbody>
+        <tr>  <td> </td>  <td> </td>  <td> </td> <td> </td> <td> </td>  </tr>
+         <tr>   <td> </td>  <td> </td>  <td> </td> <td> </td> <td> </td> </tr>  
+           <tr>  <td> </td>  <td> </td>  <td> </td> <td> </td> <td> </td>  </tr> 
+           <tr>  <td> </td>  <td> </td>  <td> </td> <td> </td> <td> </td> </tr>   
+            <tr> <td> </td>  <td> </td>  <td> </td> <td> </td> <td> </td> </tr> 
+            <tr> <td> </td>  <td> </td>  <td> </td> <td> </td> <td> </td>  </tr>
+
+
+
+    </tbody>
+    </table>
+</body>
+</html>

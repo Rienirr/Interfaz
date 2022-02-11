@@ -88,13 +88,13 @@ for(let i=0;i<radios.length;i++){
   },false);
 }
 row.addEventListener("click",(event)=>{
-  shortrow.innerText=`${event.target.value}px`;
-idrow.innerText=`${event.target.value}px`;
+  shortrow.innerText=`${event.target.value}`;
+idrow.innerText=`${event.target.value}`;
 cuadricula.style.gridRowGap=`${event.target.value}px`;
 });
 column.addEventListener("change",(event)=>{
-  shortcolumn.innerText=`${event.target.value}px`;
-  idcolum.innerText=`${event.target.value}px`;
+  shortcolumn.innerText=`${event.target.value}`;
+  idcolum.innerText=`${event.target.value}`;
   cuadricula.style.gridColumnGap=`${event.target.value}px`;
 });
 

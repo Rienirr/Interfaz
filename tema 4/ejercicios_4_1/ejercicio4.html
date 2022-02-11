@@ -19,17 +19,17 @@ body {
   background-color: #fff;
   color: #444;
   display: grid;
-  grid-template-rows: 100px 100px  100px 100px  100px 100px;
+  grid-gap: 1em 1em;
+  grid-template-rows: 100px 100px  100px 100px  ;
   grid-template-columns: 100px 100px  100px 100px 100px 100px  100px 100px  100px;
-  grid-template-areas: "a a a b b b e e e"
-                       "a a a b b b e e e"
-                       "a a a b b b e e e"
-                       "c c c d d d e e e"
-                       "c c c d d d e e e"
-                       "c c c d d d e e e";
+  grid-template-areas: "a a b b e e"
+                       "a a b b e e"
+                       "c c d d e e"
+                       "c c d d e e";
 }
 .box{
-  display: grid;
+  min-height: 65px;
+  padding: 15px;
   border: 1px solid black;
 }
 .a{ grid-area: a;
