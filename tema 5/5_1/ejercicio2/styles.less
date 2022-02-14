@@ -1,0 +1,151 @@
+/* Para usar less he creado un mixing en que le doy un borde redodeado un padding opcional y un color de fondo a los elementos.
+Además he usado las variables para definir colores. Y el anidamiento en los elementos que para mí es lo más importante de LESS 
+ya que funciona como la programación que por anidamiento y lo hace más sencillo de leer y de escribir al menos en mi opinión.
+*/
+
+/*Definimos el mixing a usar y las variables */
+.mixing(@bg, @padding: 0) {
+ padding: @padding;
+    background-color: @bg;
+    border-radius: 15px;
+    }
+    @cabecera:rgb(194, 119, 248);
+    @nav:rgb(252, 87, 191);
+    @articulos:tomato;
+    @footer:rgb(107, 86, 250);
+body{//Para cada media query hacemos el anidamientos.
+    display: grid;
+    grid-template-columns: 0.50fr 1fr 1fr 1fr 0.25fr;
+    grid-template-rows: 1fr 1.7fr 2fr 0.2fr;
+    grid-template-areas: "a a a a a"
+               "b c c c ."
+               ". c c c ."
+               "d d d d d";
+    gap: 7px 15px;
+    select{
+        display: none;
+       
+    }
+    section{
+        grid-area: c;  
+    }
+    header{
+        grid-area: a;
+        .mixing(@cabecera);
+        text-align: center;
+    }
+    li{
+        list-style: none;
+    }
+    nav{
+        grid-area: b;
+        .mixing(@nav,15px);
+    } 
+    article{
+        float: left;
+       max-width: 28%;
+    max-height: fit-content;
+    font-size: 150%;
+        .mixing(@articulos,15px);
+        color: white;
+        margin-right: 10px;
+        margin-left: 10px; 
+    }
+    footer{
+        grid-area: d;
+        .mixing(@footer,15px);
+        font-size: 0.75em;
+    }
+}
+@media screen and  (max-width: 1336px) {
+    body{
+        display: grid;
+        grid-template-columns: 0.50fr 1fr .75fr .5fr ;
+        grid-template-rows: .5fr 1fr 1fr 0.2fr;
+        grid-template-areas: "a a a a"
+                   "b c c ."
+                   ". c c ."
+                   "d d d d";
+        gap: 7px 15px;
+        article{
+            font-size: 1em;
+            max-width: 38%;
+            margin-top: 15px;
+        }
+        footer{
+            font-size: 1em;
+        }
+    } 
+}
+@media screen and  (max-width: 936px) {
+    body{
+        display: grid;
+        grid-template-columns: 0.50fr 1fr;
+        grid-template-rows: 0.25fr 1fr 3fr 1fr;
+        grid-template-areas: "a a"
+                             "b c"
+                             ". c"
+                             "d d";
+                             h2,h1{
+                                padding: 0px;
+                                margin: 0px;
+                            }
+                                article{
+                                    margin-top: 20px;
+                                    max-width: 100%;     
+                                } 
+                                article:first-of-type{
+                                    margin-top: 0px;
+                                }
+                                footer{
+                                    padding: 5px;
+                                    font-size: 1.25em;
+                                }
+    } 
+    }
+@media  screen and  (max-width: 600px ){
+    body{
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-template-rows: 0.3fr 0.1fr 3fr 0.8fr;
+        grid-template-areas: "a"
+                             "b"
+                             "c"
+                             "d";
+                             header{
+                                text-align: left;
+                            }
+                            article{
+                                margin-top: 20px;
+                                max-width: 100%;    
+                            }
+                            nav{  grid-area: b;
+                                .mixing(rgb(252, 87, 191));   
+                            }
+                            select{
+                               min-height: 100%;
+                                display: block;
+                            }
+                            ul{
+                                display: none;
+                            }
+                            footer{
+                                padding: 5px;
+                                font-size: 1em;
+                            }
+    }  
+}
+@media screen and  (max-width: 480px) {
+    body{
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-template-rows: 0.1fr 0.1fr 3fr 0.8fr;
+        grid-template-areas: "a"
+                             "b"
+                             "c"
+                             "d";
+                             h2{
+                                display: none;
+                            }                
+    }  
+}

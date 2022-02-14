@@ -1,0 +1,29 @@
+@charset "UTF-8";
+#primero .destacado {
+  font-size: 1.8rem;
+  color: orange;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#segundo .destacado {
+  font-size: 1.5rem;
+  color: #02442d;
+  padding: 3px;
+  text-decoration: underline;
+}
+
+div {
+  padding: 21px;
+}
+
+div #parrafos {
+  text-align: right;
+}
+
+p {
+  margin: 0px auto;
+  /*Para que no haya espacios ni arriba ni abajo en los párrafos al igual que en la imagen.*/
+}
+/*# sourceMappingURL=style.css.map */
